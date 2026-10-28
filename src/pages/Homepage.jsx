@@ -19,7 +19,7 @@ export default function Homepage() {
         </h2>
 
         <Link to="/app" className="cta">
-          Start Tracking Now{" "}
+          Start Tracking Now
         </Link>
       </section>
     </main>

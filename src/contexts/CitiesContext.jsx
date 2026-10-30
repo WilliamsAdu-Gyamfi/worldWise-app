@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import City from "../components/City";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -38,6 +39,66 @@ const CitiesProvider = function ({ children }) {
     }
   }
 
+  // async function createCity(newCity) {
+  //   try {
+  //     setIsLoading(true);
+  //     const res = await fetch(`${BASE_URL}/cities`, {
+  //       method: "POST",
+  //       body: JSON.stringify(newCity),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     const data = await res.json();
+  //     setCurrentCity(data);
+  //   } catch {
+  //     alert("There was an error Loading data");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }
+
+  async function createCity(newCity) {
+    try {
+      setIsLoading(true);
+
+      const res = await fetch(`${BASE_URL}/cities`, {
+        method: "POST",
+        body: JSON.stringify(newCity),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!res.ok) throw new Error("Failed to create city");
+
+      const data = await res.json();
+      setCities((cities) => [...cities, data]);
+    } catch (err) {
+      alert("There was an error creating the city");
+      // console.error(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch (err) {
+      alert("There was an error deleting the city");
+      console.error(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <CitiesContext.Provider
       value={{
@@ -45,6 +106,8 @@ const CitiesProvider = function ({ children }) {
         isLoading,
         getCity,
         currentCity,
+        createCity,
+        deleteCity,
       }}
     >
       {children}

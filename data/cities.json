@@ -23,6 +23,42 @@
         "lng": -3.7133789062500004
       },
       "id": "17806751"
+    },
+    {
+      "cityName": "Nkoranza",
+      "country": "Ghana",
+      "emoji": "🇬🇭",
+      "date": "2026-10-31T21:09:39.710Z",
+      "notes": "dd",
+      "position": {
+        "lat": "7.436927833066423",
+        "lng": "-1.6465290384353917"
+      },
+      "id": "7KjdGc6n6M8"
+    },
+    {
+      "cityName": "Kenyase Number Two",
+      "country": "Ghana",
+      "emoji": "🇬🇭",
+      "date": "2026-10-31T21:12:35.910Z",
+      "notes": "es",
+      "position": {
+        "lat": "7.196295222760672",
+        "lng": "-2.5357731323984822"
+      },
+      "id": "OVMqrVIkREI"
+    },
+    {
+      "cityName": "Oforikrom",
+      "country": "Ghana",
+      "emoji": "🇬🇭",
+      "date": "2026-10-31T21:15:58.664Z",
+      "notes": "interview",
+      "position": {
+        "lat": "6.6969777733519305",
+        "lng": "-1.581888583484379"
+      },
+      "id": "CgjjRdqk0-I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

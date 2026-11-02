@@ -71,6 +71,18 @@
         "lng": "-1.4396851433499493"
       },
       "id": "GS7dbQtAkto"
+    },
+    {
+      "cityName": "Kumasi",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-10-31T23:48:38.545Z",
+      "notes": "visit",
+      "position": {
+        "lat": "36.73536065466161",
+        "lng": "-2.658857026763024"
+      },
+      "id": "fFG8ZXJue1M"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
